@@ -1,0 +1,19 @@
+create table pct (
+	pct	int primary key,
+	sen	int,
+	assm	int,
+	supv	int,
+	bart	int,
+	reg	int,
+	np	real,
+	dem	real,
+	rep	real,
+	aip	real,
+	grn	real,
+	lib	real,
+	nlp 	real,
+	pnf	real,
+	rfm	real,
+	fem	real,
+	vbm	real
+);

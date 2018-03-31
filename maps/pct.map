@@ -1,0 +1,36 @@
+MAP
+	NAME PCT_ 
+#	EXTENT 5788964.052480 2065115.813640 6046262.336280 2166785.735540
+	EXTENT  5969647 2083279 6034120 2133073
+	SIZE 1280 1024 
+	SHAPEPATH      "/www/port80/root/maps/elepcts"
+	IMAGECOLOR 255 255 255
+	LAYER 
+		NAME         "pcts"
+		DATA         "elect_precincts"
+		STATUS       ON
+		TYPE POLYGON
+		CLASSITEM 'PRECNAME'
+		CLASS
+			EXPRESSION "3633"
+			NAME 'Selected Precincts'
+			STYLE 
+#				COLOR 255 0 0 
+			END
+		END
+		CLASS 
+			NAME "Election Precincts"
+			STYLE
+				OUTLINECOLOR 0 0 0 
+#			COLOR  255 255 255 
+			END
+		END
+	END 
+	WEB
+		TEMPLATE '/www/port80/root/maps/template.html'
+		IMAGEPATH 'tmp/ms_tmp/'
+		IMAGEURL '/maps/tmp/ms_tmp/'
+		MAXSCALE 363136
+		MINSCALE 363136
+	END
+END

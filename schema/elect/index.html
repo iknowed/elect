@@ -1,0 +1,29 @@
+<HTML>
+<HEAD>
+<TITLE>Electoral Mechanics</TITLE>
+</TITLE>
+</HEAD>
+<BODY BGCOLOR="#770000">
+<TABLE BORDER=1 HEIGHT=99% WIDTH=99% BGCOLOR="#ffddBB" CELLPADDING=4>
+<TR BGCOLOR='#ff3333' HEIGHT=10%><TD ALIGN='CENTER' COLSPAN=3><FONT SIZE=+3 face='arial'>Electoral Mechanics Toolkit</FONT></TD></TR>
+<TR BGCOLOR='#ff9911' HEIGHT=5%><TD ALIGN='CENTER' WIDTH=25%><FONT SIZE=+2 face='arial'>SQL Table</FONT></TD><TD ALIGN='CENTER'><FONT SIZE=+2 face='arial'>Module</FONT></TD><TD ALIGN='CENTER' WIDTH=25%><FONT SIZE=+2 face='arial'>Code</FONT></TD></TR>
+<TR HEIGHT=5%  BGCOLOR='#ff7755'><TD WIDTH=25%><A HREF="ass/sql">ass.sql</A></TD><TD>The <A HREF='ass/CCSF 3 File Layout - Assessor.doc'>layout</A> of the Assessor Extract files is provided with the datafiles:<br><b>aiasecd</b>: assessment codes for block/lot/num/street/apt<br><b>aiaownr</b>: block/lot to owner<br><b>aiamadr</b> owner contact info - could be matched with property address to determine homeownership/tenancy.</b><br>Owner names are loaded to determine Housing Authority/Redevelopment voters for appropriate outreach or for a more sophisticated matching of owner versus voter for cleaner tenant/homeowner differetiation.</TD><TD WIDTH=25%><A HREF='ass/ass.pl'>ass.pl</A> written against <A HREF='Elect'>Elect</A> and <A HREF='Elect.pm'>Elect.pm</A> as a model for other modules</TD></TR>
+<TR HEIGHT=5% BGCOLOR='ff7755'><TD WIDTH=25%><A HREF='ten/sql'>ten.sql</A></TD><TD>tenant table, derived from Assessor's file and master voter file</TD><TD WIDTH=25%><A HREF='ten/ten.pl'>ten.pl</A><br><A HREF='hex/hex.pl'>hex.pl</A></TD></TR>
+<TR HEIGHT=5%><TD WIDTH=25%><A HREF="mvf/sql">mvf.sql</A><br><A HREF='mvf/mvfix'>mvfix.sql</A></TD><TD>The Master Voter File is a product of the <A HREF="http://sfgov.org/election">San Francisco Department of Elections</A> runs about 139mb and is available on CDROM for $3.<p>In this system, this file is loaded and remains immutable so that new versions can be substituted as released.<p>
+It is linked to relevant files through a the vid table</TD><TD WIDTH=25%><A HREF='mvf/mvf.pl'>mvf.pl</A><br><A href='mvf/v112403.pl'>v112403.pl</a></TD></TR>
+<TR HEIGHT=5%><TD WIDTH=25%><A HREF='vid/sql'>vid.sql</A></TD><TD>voter_id master index</TD><TD WIDTH=25%><A HREF='vid/vid.pl'>vid.pl</A></TD></TR>
+<TR HEIGHT=5%><TD WIDTH=25%><A HREF='av/sql'>av.sql</A></TD><TD>Absentee Voter File<br>released after vmb ballots mailed, updated as they are returned.<br>Linked by vid(voter_id) </TD><TD WIDTH=25%><A HREF='av/av.pl'>av.pl</A><br><A HREF='av/av031209.pl'>av031209.pl</A></TD></TR>
+<TR HEIGHT=5%><TD WIDTH=25%><A HREF='id/sql'>id.sql</A></TD><TD>Identified Voters TBD<br>needs to be indexed off of elections and races</TD><TD WIDTH=25%><A HREF='id/id.pl'>id.pl</A></TD></TR>
+<TR HEIGHT=5%><TD WIDTH=25%>pro.sql</TD><TD>Voting Propensities TBD<br>presidential<br>supervisorial<br>mayoral<br>primary</TD><TD WIDTH=25%>pro.pl</TD></TR>
+<TR HEIGHT=5%><TD WIDTH=25%><A HREF='eth/sql'>eth.sql</A></TD><TD>Ethnicities TBD<br>involve collecting common last names and generating identifiers mapped by voterid.  Did this in Matt's campaign with Latino surnames, different than a language outreach.</TD><TD WIDTH=25%><A HREF='eth/eth.pl'>eth.pl</A></TD></TR>
+<TR HEIGHT=5%><TD WIDTH=25%><A HREF='lang/sql'>lang.sql</A></TD><TD>Languages TBD<br> easy to do.  Just map place of birth (in household?) to language</TD><TD WIDTH=25%><A HREF='lang/lang.pl'>lang.pl</A></TD></TR>
+<TR HEIGHT=5%><TD WIDTH=25%><A HREF='out/sql'>out.sql</A></TD><TD>Outreach event TBD<br>Generic coded outreach event.  Drop, canvass, phonebank, with  or without feedback recovery, paper or electronic.</TD><TD WIDTH=25%><A HREF='out/out.pl'>out.pl</A></TD></TR>
+<TR HEIGHT=5% BGCOLOR='#ff8866'><TD WIDTH=25%><A HREF='ele/sql'>ele.sql</A></TD><TD>Election Class TBD<br>run multiple campaigns per election</TD><TD WIDTH=25%><A HREF='ele/ele.pl'>ele.pl</A></TD></TR>
+<TR HEIGHT=5% BGCOLOR='#ff8866'><TD WIDTH=25%><A HREF='race/sql'>race.sql</A></TD><TD>Race (Contest) Class TBD<br>run multiple races per election</TD><TD WIDTH=25%><A HREF='race/race.pl'>race.pl</A></TD></TR>
+<TR HEIGHT=5% BGCOLOR='#ff8866'><TD WIDTH=25%><A HREF='ofc/sql'>ofc.sql</A></TD><TD>Office Class TBD<br>which office or measure,with jurisdiction</TD><TD WIDTH=25%><A HREF='ofc/ofc.pl'>ofc.pl</A></TD></TR>
+<TR HEIGHT=5%><TD WIDTH=25%><A HREF='res/sql'>res.sql</A></TD><TD>Results by precinct</TD><TD WIDTH=25%><A href='res/res031209.pl'>res031209.pl</A></TD></TR>
+<TR HEIGHT=5%><TD WIDTH=25%><A HREF='pct/sql'>pct.sql</A></TD><TD>Statistics by precinct</TD><TD WIDTH=25%><A href='pct/pct.pl'>pct.pl</A></TD></TR>
+<TR HEIGHT=85%><TD WIDTH=25%>&nbsp</TD><TD>&nbsp;</TD><TD WIDTH=25%>&nbsp;</TD></TR>
+</TABLE>
+</BODY>
+</HTML>

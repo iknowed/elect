@@ -1,0 +1,2 @@
+select count(distinct(voter_id)) from mvf061023 where ( ( voice is not NULL ) AND ( supv = 6 ) AND ( ( party= 'DEM-1') OR ( party= 'NP-0') OR ( party= 'GRN-4') OR ( party= 'P&F-7') ) AND ( ( birth_place = 'CN' ) OR ( birth_place = 'HK' ) OR ( birth_place = 'TW' ) OR ( birth_place = 'FOR' ) ) AND ( ( mvf061023.voter_id in ( select voter_id from lang where lang.lid=2 ) ) OR ( mvf061023.voter_id in ( select voter_id from lang where lang.lid=3 ) ) OR ( mvf061023.voter_id in ( select voter_id from eth where eth.eid=3 ) ) ) )
+d

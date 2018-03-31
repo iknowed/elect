@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName	"Polls"
+AuthUserFile /www/port80/server/auth/poll
+require valid-user

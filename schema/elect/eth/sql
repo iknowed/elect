@@ -1,0 +1,12 @@
+create table ethnicities ( 
+	eid int primary key default nextval('ethnicities_eid_seq') NOT NULL, 
+	ethnicity varchar(20)
+);
+
+create table eth ( 
+	voter_id int unique not null, foreign key(voter_id) references vid(voter_id)
+	affidavit char(13),
+	eid  int, 
+	foreign key(eid) references ethnicities(eid)
+);
+

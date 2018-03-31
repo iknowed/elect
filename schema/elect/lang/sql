@@ -1,0 +1,11 @@
+create table languages ( 
+	lid int primary key default nextval('languages_lid_seq') , 
+	language varchar(20)
+);
+
+create table lang ( 
+	voter_id int unique not null, foreign key(voter_id) references vid(voter_id)
+	affidavit char(13),
+	lid  int, 
+	foreign key(lid) references languages(lid)
+);

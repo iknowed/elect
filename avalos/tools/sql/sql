@@ -1,0 +1,279 @@
+create table ass ( 
+	block	char(5),
+	lot	char(5),
+	a0	int,
+	an	int,
+	street	varchar(19),
+	apartment_number varchar(15),
+	ex	boolean default 'f',
+	yrblt	date,
+	name	varchar(30)
+);
+
+
+create table av ( 
+	affidavit char(13), 
+	voter_id int unique not null, foreign key(voter_id) references vid(voter_id)
+	Name varchar(64),
+	CareOf varchar(64),
+	address1 varchar(64),
+	address2 varchar(64),
+	District int,
+	Precinct int,
+	PolParty char(6),
+	date_issued date,
+	date_returned  date,
+	category varchar(10),
+	source varchar(10),
+	return_source varchar(10)
+);
+
+create table cmp ( 
+	cmpid int primary key default nextval('campaigns_cmpid_seq') , 
+	campaign varchar(20), 
+	eleid int, 
+	foreign key(eleid) references ele(eleid)
+);
+create table E031209 ( 
+	voter_id int, 
+	foreign key(voter_id) references vid(voter_id), 
+	v char
+);
+
+
+create table ele ( 
+	eleid int primary key default nextval('elect_ele_seq') , 
+	edate date
+);
+create table ethnicities ( 
+	eid int primary key default nextval('ethnicities_eid_seq') NOT NULL, 
+	ethnicity varchar(20)
+);
+
+create table eth ( 
+	voter_id int, 
+	foreign key(voter_id) references vid(voter_id), 
+	affidavit char(13),
+	eid  int, 
+	foreign key(eid) references ethnicities(eid)
+);
+
+create table idtypes ( 
+	idtid int primary key default nextval('idtypes_idtid_seq') , 
+	type varchar(5)
+);
+
+create table ids ( 
+	voter_id int, 
+	foreign key(voter_id) references vid(voter_id), 
+	tstamp timestamp, 
+	affidavit char(13), 
+	idtid int, 
+	foreign key(idtid) references idtypes(idtid)
+);
+
+insert into idtypes (type) values ('SUP');
+insert into idtypes (type) values ('NO2');
+insert into idtypes (type) values ('NO3');
+insert into idtypes (type) values ('AGN');
+insert into idtypes (type) values ('UND');
+insert into idtypes (type) values ('DNC');
+insert into idtypes (type) values ('BAD');
+
+create table languages ( 
+	lid int primary key default nextval('languages_lid_seq') , 
+	language varchar(20)
+);
+
+create table lang ( 
+	voter_id int, 
+	foreign key(voter_id) references vid(voter_id), 
+	affidavit char(13),
+	lid  int, 
+	foreign key(lid) references languages(lid)
+);
+
+create index mvf_party_ix on mvf(party);
+create index mvf_fname_ix on mvf(name_first);
+create index mvf_lname_ix on mvf(name_last);
+create index mvf_street_ix on mvf(street);
+create index mvf_hnum_ix on mvf(house_number);
+create index mvf_supv_ix on mvf(supv);
+create index mvf_pct_ix on mvf(precinct);
+create index mvf_aptnum_ix on mvf(apartment_number);
+create table mvf ( 
+	affidavit   varchar(12), 
+	name_prefix varchar(5), 
+	name_last   varchar(24), 
+	name_first  varchar(16), 
+	name_middle varchar(16), 
+	street      varchar(19), 
+	type        varchar(9), 
+	pre_dir     varchar(5), 
+	house_number   int, 
+	house_fraction char(4), 
+	apartment_number  varchar(20), 
+	zip         varchar(12), 
+	precinct    int, 
+	portion     int, 
+	party       char(5), 
+	reg_date    date, 
+	Phone       varchar(18), 
+	Perm        char(1), 
+	military    char(1), 
+	gender      char(1), 
+	RegType     varchar(23), 
+	birth_place varchar(9), 
+	birth_date  date, 
+	care_of     varchar(40), 
+	mail_street varchar(40), 
+	mail_city   varchar(38), 
+	mail_state  varchar(28), 
+	mail_zip    varchar(21), 
+	E031209     char(1), 
+	E031104     char(1), 
+	E031007     char(1), 
+	E021210     char(1), 
+	E021105     char(1), 
+	E020305     char(1), 
+	E011211     char(1), 
+	E011106     char(1), 
+	E001212     char(1), 
+	E001107     char(1), 
+	E000307     char(1), 
+	E991214     char(1), 
+	E991102     char(1), 
+	E981103     char(1), 
+	E980602     char(1), 
+	E971104     char(1), 
+	E970603     char(1), 
+	E961105     char(1), 
+	E960326     char(1), 
+	E951212     char(1), 
+	E951107     char(1), 
+	E941108     char(1), 
+	E940607     char(1), 
+	E931102     char(1), 
+	E930615     char(1), 
+	E921103     char(1), 
+	CONG        int, 
+	SEN         int, 
+	ASSM        int, 
+	SUPV        int, 
+	BART        char(3), 
+	voter_id int unique not null, foreign key(voter_id) references vid(voter_id)
+);
+
+create table ofc ( 
+	ofcid int primary key default nextval('ofc_ofcid_seq') , 
+	ofc varchar(30)
+);
+create table oldpct (
+	opct	int primary key,
+	cnt	int,
+	npcts int[],
+	npers real[]		
+);
+create table outreachtypes ( 
+	ortid int primary key default nextval('outreachtypes_ortid_seq') , 
+	type varchar(20), 
+	feedback boolean
+);
+
+create table outreach ( 
+	orid int primary key default nextval('outreach_orid_seq') , 
+	outreach varchar(20), 
+	ortid int, 
+	foreign key(ortid) references outreachtypes(ortid), 
+	cmpid int, 
+	foreign key(cmpid) references cmp(cmpid)
+);
+
+create table out ( 
+	voter_id int, 
+	foreign key(voter_id) references vid(voter_id), 
+	tstamp timestamp, 
+	affidavit char(13), 
+	orid int, 
+	foreign key(orid) references outreach(orid)
+);
+create table pct (
+	pct	int primary key,
+	sen	int,
+	assm	int,
+	supv	int,
+	bart	int,
+	reg	int,
+	np	real,
+	dem	real,
+	rep	real,
+	aip	real,
+	grn	real,
+	lib	real,
+	nlp 	real,
+	pnf	real,
+	rfm	real,
+	fem	real,
+	vbm	real
+);
+create table pvi ( 
+	precinct int, 
+	pvi real 
+);
+create table race ( 
+	rid int primary key default nextval('race_rid_seq') , 
+	eleid int, 
+	foreign key(eleid) references ele(eleid), 
+	edate date, 
+	ofcid int, 
+	foreign key(ofcid) references ofc(ofcid),
+	dist int
+);
+
+create table res031209 (
+	pct	int,
+	typ	char,
+	reg	int,
+	vot	int,
+	tur	real,
+	gn	int,
+	mg	int,
+	th	int,
+	kh	int
+)
+create table ten ( 
+	voter_id int unique, 
+	foreign key(voter_id) references vid(voter_id), 
+	tenant boolean default true
+);
+
+create sequence vid_voter_id_seq;
+create table vid ( voter_id int primary key );
+
+
+
+CREATE FUNCTION vid_trigger() RETURNS trigger AS 
+'BEGIN
+	INSERT into vid (voter_id) values (NEW.voter_id);
+	return NEW;
+END;' 
+LANGUAGE plpgsql;
+ 
+CREATE TRIGGER vid_trigger BEFORE INSERT ON mvf
+     FOR EACH ROW EXECUTE PROCEDURE vid_trigger();
+
+CREATE TRIGGER vid_trigger BEFORE INSERT ON av
+     FOR EACH ROW EXECUTE PROCEDURE vid_trigger();
+
+
+
+CREATE FUNCTION vid_trigger() RETURNS trigger AS 
+'BEGIN
+	INSERT into vid (voter_id) values (NEW.voter_id);
+	return NEW;
+END;' 
+LANGUAGE plpgsql;
+ 
+
+CREATE TRIGGER vid_trigger BEFORE INSERT ON av
+     FOR EACH ROW EXECUTE PROCEDURE vid_trigger();

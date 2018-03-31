@@ -1,0 +1,105 @@
+ precinct |                  place                  |               addr               |                 near                  
+----------+-----------------------------------------+----------------------------------+---------------------------------------
+     3601 | Firehouse                               | 1067 Post                        | Polk & Larkin
+
+     3602 | Puquito Café and Deli                   | 842 Geary Street                 | Larkin & Hyde
+
+     3603 | Vietnamese Community Center             | 766 Geary Street                 | Hyde & Leavenworth
+
+     3604 | St. Vincent de Paul                     | 480 Ellis Street                 | Leavenworth & Jones
+
+     3606 | Maria Manor                             | 174 Ellis Street                 | Cyril Magnin & Mason
+
+     3607 | NO POLLING PLACE                        |                                  | 
+
+     3608 | Western Park Apartments                 | 1280 Laguna Street               | Eddy & Ellis
+
+     3610 | Family Apartments                       | 555 Ellis Street                 | Hyde & Leavenworth
+
+     3611 | Project Open Hand                       | 730 Polk Street                  | Eddy & Ellis
+
+     3612 | Ellis Gardens                           | 666 Ellis Street                 | Larkin & Hyde
+
+     3613 | Cadillac Hotel                          | 380 Eddy Street                  | Jones & Leavenworth
+
+     3614 | Boeddeker Clubhouse                     | 240 Eddy Street                  | Jones & Taylor
+
+     3615 | Firehouse                               | 109 Oak Street                   | Franklin & Gough
+
+     3616 | Light House for the Blind               | 214 Van Ness Avenue              | Hayes & Grove
+
+     3617 | Hampton Court                           | 378 Golden Gate                  | Between Hyde & Larkin
+
+     3618 | Lobby YMCA                              | 220 Golden Gate                  | Btwn Leavenworth and Hyde
+
+     3619 | Police Sation - Comm Room               | 301 Eddy St                      | Btwn Jones & Leavenworth
+
+     3620 | Canon Barcus Comm House - Comm Rm       | 670 Natoma St                    | Btwn 7th & 8th
+
+     3621 | Dorothy Day Community                   | 54 McAllister St                 | Enter McAllister Jones & Leavenworth
+
+     3622 | San Francisco Bahai Center              | 170 Valencia St                  | Enter Valencia btw DuBoce & McCoppin
+
+     3623 | Showroom SF Honda                       | 10 S Van Ness Ave                | Btwn Market and Mission
+
+     3624 | The Arc San Francisco                   | 1500 Howard St                   | Btwn 11th and 12th St
+
+     3625 | Odd Fellows Building                    | 26 7th Street                    | Btwn Market and Mission
+
+     3626 | The Rose Hotal                          | 125 6th Street                   | Btwn Minna & Mission
+
+     3627 | Clementina Towers Rec Room              | 330 Clementina St                | Btwn 4th & 5th St
+
+     3628 | Firehouse                               | 676 Howard St                    | Btwn New Montgomery & 3rd St
+
+     3629 | YMCA Lobby                              | 169 Steuart St                   | Btwn Mission & Howard
+
+     3630 | Rec Center - So of Market               | 270 6th St                       | Between Folsom & Howard
+
+     3631 | Shipshape Community Center              | Bldg 497 at 9th St & I Ave       | 9th St and I Ave
+
+     3632 | St Francis of Assisi - Comm Room        | 145 Guerrero St                  | Btwn Duboce & 14th St
+
+     3633 | School - Marshall Elementary            | 1575 15th Street                 | Btwn Mission & Capp St
+
+     3634 | SF Dept Animal Care & Ctrl              | 1200 15th St                     | Btwn Treat & Alabama
+
+     3635 | Warehouse Union Hall                    | 255 9th St                       | Btwn Folsom & Howard
+
+     3636 | Swords to Plowshares                    | 1060 Howard St                   | Btwn 6th & 7th
+
+     3637 | Columbia Park Apartments                | 1035 Folsom St                   | Btwn 6th & 7th
+
+     3638 | Mendelsohn House - Room                 | 747 Folsom St                    | Btwn 3rd & 4th St
+
+     3639 | Firehouse                               | 36 Bluxome St                    | Btwn 4th & 5th St
+
+     3640 | SFFD Headquarters                       | 698 2nd ST                       | Corner of 2nd & Townsend
+
+     3641 | Brickhouse                              | 426 Brannan St                   | Enter Btwn 3rd & 4th St
+
+     3642 | Delancey St - Store Space               | 600 The Embarcadero              | Between Brannan & Townsend
+
+     3643 | Rich Sorro Commons Lobby                | 225 King St                      | Between 3rd & 4th St
+
+     3644 | Centro Del Pueblo                       | 474 Valencia ST                  | Btwn 15th & 16th St
+
+     3645 | Dunleavy Plaza                          | 36 Hoff St                       | Btwn 16th & 17th St
+
+     3646 | Mission Neighborhood Health - Confer Rm | 240 Shotwell St                  | Btwn 16th & 17th St
+
+     3647 | Mission Language & Vocational School    | 710 Florida St                   | Corner of 19th & Florida St
+
+     3648 | Steamboat Point Apartments              | 800 Embarcadero- Cnr of Townsend | Crnr of Embarcadero & Townsend
+
+     3649 | The Arriba Juntos                       | 1850 Mission St                  | Btwn 14th & 15th Sts
+
+     3650 | Opera Plaza - Rec Rm/ 2nd Fl            | 601 Van Ness Ave                 | Btwn Turk & Golden Gate
+
+     3651 | Eastern Park Apartments - Comm Str      | 711 Eddy St                      | Btwn Van Ness & Polk
+
+     3652 | Room - Inside on the Right              | Pier 26                          | Btwn Harrison & Bryant
+
+     3605 | SF Senior Center                        | 481 OFarrell Street              | Taylor & Jones
+(51 rows)
+

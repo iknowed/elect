@@ -1,0 +1,19 @@
+$canvhtml = "   <TABLE BORDER=2> \
+      <TR><TD>Support:</TD><TD> \
+         <SELECT NAME='SUP'> \
+            <OPTION $SUP_NULL_SELECTED VALUE=''> \
+            <OPTION $SUP_SUP_SELECTED VALUE='SUP'>Support \
+            <OPTION $SUP_NO2_SELECTED VALUE='NO2'>#2 \
+            <OPTION $SUP_NO3_SELECTED VALUE='NO3'>#3 \
+            <OPTION $SUP_UND_SELECTED VALUE='UND'>Undecided \
+            <OPTION $SUP_AGN_SELECTED VALUE='AGN'>Opposed \
+         </SELECT></TD> \
+      <TD>Sign:</TD><TD><INPUT TYPE='CHECKBOX' NAME='SGN' $SGN_SELECTED></TD> \
+      <TD>Volunteer:</TD><TD><INPUT TYPE='CHECKBOX' NAME='VOL' $VOL_SELECTED></TD> \
+      <TD>House Party:</TD><TD><INPUT TYPE='CHECKBOX' NAME='HPTY' $HPTY_SELECTED></TD></TR> \
+      <TR><TD>Organize Bldg:</TD><TD><INPUT TYPE='CHECKBOX' NAME='BLDG' $BLDG_SELECTED></TD> \
+      <TD>Left Message:</TD><TD><INPUT TYPE='CHECKBOX' NAME='MSG' $MSG_SELECTED></TD> \
+      <TD>Call Back:</TD><TD><INPUT TYPE='CHECKBOX' NAME='BAK' $BAK_SELECTED></TD> \
+      <TD>No Answer:</TD><TD><INPUT TYPE='CHECKBOX' NAME='NA' $NA_SELECTED></TD></TR> \
+      <TR><TD>Timestamp:</TD><TD COLSPAN=2>$stamp</TD><TD>Notes:</TD><TD COLSPAN=4>$notes</TD></TR> \
+   </TABLE>";

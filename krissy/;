@@ -1,0 +1,103 @@
+
+create or replace function islatinox(mvf) returns numeric as '
+DECLARE
+	voter alias for $1;
+	data_r	RECORD;
+	eth_r	RECORD;
+	lang_r	RECORD;
+	avg_r	RECORD;
+	pct_r	RECORD;
+	voter_id	integer;
+	lname	varchar;
+	bplace	varchar;
+	precinct	integer;
+	eths	numeric;
+	eth	numeric;
+	hisp_e	numeric;
+	lang_t	varchar;
+	lang	varchar;
+	a_hisp	numeric;
+	hisp_p	numeric;
+	hisp_c	numeric;
+	n_lang	numeric;
+	b_state	numeric;
+	spanish numeric;
+BEGIN
+	b_state 	:= 0.0;
+	n_lang  	:= 0.0;
+	spanish 	:= 0.0;
+	voter_id 	:= voter.voter_id;
+	lname 		:= voter.name_last;
+	bplace		:= voter.birth_place;
+	precinct	:= voter.precinct;
+
+	if voter.birth_place = ''CA'' then
+		b_state = 1.0;
+	end if;
+
+	if voter.birth_place = ''AZ'' then
+		b_state := 1.0;
+	end if;
+
+	if voter.birth_place = ''NM'' then
+		b_state := 1.0;
+	end if;
+
+	if voter.birth_place = ''TX'' then 
+		b_state := 1.0;
+	end if;
+
+	eths	:=	0.0;
+	hisp_e	:=	0.0;
+
+	for eth_r in select ethnicity from ethnicities,snames where (surname=voter.name_last and snames.eid=ethnicities.eid) loop
+		eths 	:= eths + 1.0;	
+		if eth_r.ethnicity = ''Hispanic'' then
+			hisp_e := 1.0;		
+		end if;
+	end loop;
+
+	if eths >= 0.0 then
+		hisp_e := hisp_e / eths;
+	end if;		
+	
+	spanish	:= 0.0;
+	for lang_r in select language from bplaces,langs where bplace=bplace and (bplaces.lid=langs.lid) loop
+
+		if lang_r.language = ''Spanish'' then
+			n_lang := n_lang + 1.0;
+			spanish := 1.0;			
+		end if;
+	end loop;
+
+	if spanish = 1.0 then
+		if n_lang > 1.0 then
+			spanish = 1.0 / n_lang;
+		end if;
+	end if;
+
+	if spanish = 0.0 then
+		if b_state = 1 then
+			spanish := .5;
+		end if;
+	end if;
+	
+	return spanish;
+
+	select into avg_r avg(p_hisp) from pct;
+
+	a_hisp	:= avg_r.avg;
+
+        select into pct_r p_hisp from pct where pct=precinct;
+                                                                                
+        hisp_p	:= pct_r.p_hisp;
+
+	hisp_c := hisp_p / a_hisp;
+	
+	if (hisp_c + spanish + hisp_e) > 1.5 then
+		return 1;
+	else
+		return 0;
+	end if;
+END;
+' language plpgsql;
